@@ -1,6 +1,9 @@
 import EmailItem from "./EmailItem";
+import { useSelector } from "react-redux/es/exports";
 
-const Emails = ({ messages }) => {
+const Emails = () => {
+  const messages = useSelector((state) => state.messages);
+
   return (
     messages &&
     messages.subMenuItems.map((message) => {

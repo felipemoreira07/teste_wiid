@@ -1,17 +1,15 @@
 import { Box, Typography } from "@mui/material";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
-import { getSubMenus } from "../services/service";
+import { addMessages } from "../store/data/data";
+import { useDispatch } from "react-redux";
 
-const SubConta = ({ name, id, setMessages }) => {
-  const fetch = async () => {
-    const { data } = await getSubMenus(id);
-    setMessages(data);
-  };
+const SubConta = ({ name, id }) => {
+  const dispatch = useDispatch();
 
   return (
     <Box
       key={id}
-      onClick={() => fetch()}
+      onClick={() => dispatch(addMessages(id))}
       sx={{
         display: "flex",
         flexDirection: "column",

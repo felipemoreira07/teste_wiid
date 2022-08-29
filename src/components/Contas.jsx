@@ -3,20 +3,18 @@ import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useEffect, useState } from "react";
 import SubConta from "./SubContas";
-import { getMenus } from "../services/service";
+import { useDispatch, useSelector } from "react-redux/es/exports";
+import { addSubmenu } from "../store/data/data";
 
-const Contas = ({ setMessages }) => {
+const Contas = () => {
+  const dispatch = useDispatch();
   const [showCaixas, setShowCaixas] = useState(null);
-  const [menus, setMenus] = useState([]);
 
   useEffect(() => {
-    const fetch = async () => {
-      const response = await getMenus();
-      const menuInfo = response.data;
-      setMenus(menuInfo);
-    };
-    fetch();
-  }, []);
+    dispatch(addSubmenu());
+  }, [dispatch]);
+
+  const menus = useSelector((state) => state.subMenu);
 
   return (
     <>
@@ -68,7 +66,6 @@ const Contas = ({ setMessages }) => {
                     key={subAccount.id}
                     id={subAccount.id}
                     name={subAccount.name}
-                    setMessages={setMessages}
                   />
                 );
               })}

@@ -8,7 +8,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import Emails from "./Emails";
 import { useState } from "react";
 
-const HeaderRight = ({ messages }) => {
+const HeaderRight = () => {
   const [showEmails, setShowEmails] = useState(true);
 
   const archiveEmails = () => {
@@ -74,7 +74,7 @@ const HeaderRight = ({ messages }) => {
         </Button>
       </Box>
 
-      {showEmails && <Emails messages={messages} />}
+      {showEmails && <Emails />}
     </Box>
   );
 };

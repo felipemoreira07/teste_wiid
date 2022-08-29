@@ -9,7 +9,7 @@ import { deepOrange } from "@mui/material/colors";
 import Contas from "./Contas";
 import { Link } from "react-router-dom";
 
-const HeaderLeft = ({ setMessages }) => {
+const HeaderLeft = () => {
   return (
     <Box
       sx={{
@@ -77,7 +77,7 @@ const HeaderLeft = ({ setMessages }) => {
         Favoritos
       </Typography>
 
-      <Contas setMessages={setMessages} />
+      <Contas />
     </Box>
   );
 };
