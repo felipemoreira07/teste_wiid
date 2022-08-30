@@ -14,7 +14,7 @@ const Contas = () => {
     dispatch(addSubmenu());
   }, [dispatch]);
 
-  const menus = useSelector((state) => state.subMenu);
+  const menus = useSelector((state) => console.log(state));
 
   return (
     <>
