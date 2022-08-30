@@ -5,6 +5,7 @@ import { getSubMenus } from "../services/service";
 const SubConta = ({ name, id, setMessages }) => {
   const fetch = async () => {
     const { data } = await getSubMenus(id);
+    console.log(data);
     setMessages(data);
   };
 
