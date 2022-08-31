@@ -2,7 +2,12 @@ import EmailItem from "./EmailItem";
 import { useSelector } from "react-redux/es/exports";
 
 const Emails = () => {
-  const messages = useSelector((state) => state.messages);
+  const { messages } = useSelector((state) => state.data);
+
+  const fetch = async () => {
+    const { data } = await getSubMenus(id);
+    messages = data;
+  };
 
   return (
     messages &&

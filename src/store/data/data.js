@@ -1,5 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { getSubMenus, getMenus } from "../../services/service";
+
+export const getMessages = createAsyncThunk(, async )
 
 const dataSlice = createSlice({
   name: "messages",
@@ -14,7 +16,7 @@ const dataSlice = createSlice({
       state.messages = dataM;
     },
     addSubmenu: async (state) => {
-      const { dataS } = await getMenus();
+      const dataS = await getMenus();
       state.subMenu = dataS;
     },
   },
