@@ -1,13 +1,22 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getMessagesAction } from "../store/actions/actions";
 import EmailItem from "./EmailItem";
-import { useSelector } from "react-redux/es/exports";
 
 const Emails = () => {
-  const { messages } = useSelector((state) => state.data);
+  const dispatch = useDispatch();
+  const subMenuId = useSelector((state) => state.id);
+  const messages = useSelector((state) => state.messages);
 
-  const fetch = async () => {
-    const { data } = await getSubMenus(id);
-    messages = data;
-  };
+  useEffect(() => {
+    const fetch = async () => {
+      if (subMenuId) {
+        await dispatch(getMessagesAction(subMenuId));
+      }
+    };
+
+    fetch();
+  }, [subMenuId, dispatch]);
 
   return (
     messages &&

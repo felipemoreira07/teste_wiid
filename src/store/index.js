@@ -1,8 +1,36 @@
-import { configureStore } from "@reduxjs/toolkit";
-import dataReducer from "./data/data";
+import thunk from "redux-thunk";
+import { applyMiddleware, compose, createStore } from "redux";
 
-const store = configureStore({
-  reducer: { data: dataReducer },
-});
+const initialState = {
+  subMenus: [],
+  messages: null,
+  id: null,
+};
+
+const enhancer = compose(applyMiddleware(thunk));
+
+const state = (state = initialState, action) => {
+  switch (action.type) {
+    case "submenus":
+      return {
+        ...state,
+        subMenus: action.payload,
+      };
+    case "messages":
+      return {
+        ...state,
+        messages: action.payload,
+      };
+    case "id":
+      return {
+        ...state,
+        id: action.payload,
+      };
+    default:
+      return { ...state };
+  }
+};
+
+const store = createStore(state, enhancer);
 
 export default store;

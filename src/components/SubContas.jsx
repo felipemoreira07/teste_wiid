@@ -1,15 +1,20 @@
 import { Box, Typography } from "@mui/material";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
-import { addMessages } from "../store/data/data";
 import { useDispatch } from "react-redux";
 
 const SubConta = ({ name, id }) => {
   const dispatch = useDispatch();
+  const getId = () => {
+    dispatch({
+      type: "id",
+      payload: id,
+    });
+  };
 
   return (
     <Box
       key={id}
-      onClick={() => dispatch(addMessages(id))}
+      onClick={getId}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -31,6 +36,10 @@ const SubConta = ({ name, id }) => {
           sx={{
             color: "gray",
             fontSize: "1rem",
+            cursor: "pointer",
+            "&:hover": {
+              color: "black",
+            },
           }}
         >
           {name}

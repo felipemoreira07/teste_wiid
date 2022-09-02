@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getMenus = () => {
+export const getSubMenus = () => {
   const url = `${process.env.REACT_APP_BASE_URL}/menus`;
   return axios({
     url: url,
@@ -8,7 +8,7 @@ export const getMenus = () => {
   });
 };
 
-export const getSubMenus = (id) => {
+export const getMessages = (id) => {
   const url = `${process.env.REACT_APP_BASE_URL}/items/${id}`;
   return axios({
     url: url,
