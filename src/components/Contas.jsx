@@ -43,8 +43,10 @@ const Contas = ({ setMessages }) => {
               <Typography
                 variant="body2"
                 sx={{
-                  color: "gray",
+                  color: "text.secondary",
                   fontSize: "1rem",
+                  fontFamily: "Cabin",
+                  fontWeight: "500",
                 }}
               >
                 {menu.name}

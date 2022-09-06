@@ -1,20 +1,24 @@
 .MuiAvatar-root {
-    background-color: #e91e63;
-    margin-top: 0.5rem;
-    margin-left: 1rem;
-    margin-right: 0.5rem;
+  background-color: #e91e63;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
 }
 
 .dateEmogis {
-    display: flex;
-    flex-direction: row;
-    color: black;
-
+  display: flex;
+  flex-direction: row;
 }
 
 .root {
-    display: flex;
-    flex-direction: row;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+}
+
+.root:hover {
+  background-color: lightgray;
 }

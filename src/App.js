@@ -1,8 +1,11 @@
 import { NavRoutes } from "./routes";
+import { ColorModeContextProvider } from "./store/ColorModeContext";
 
 function App() {
   return (
-    <NavRoutes />
+    <ColorModeContextProvider>
+      <NavRoutes />
+    </ColorModeContextProvider>
   );
 }
 

@@ -5,7 +5,6 @@ import { getSubMenus } from "../services/service";
 const SubConta = ({ name, id, setMessages }) => {
   const fetch = async () => {
     const { data } = await getSubMenus(id);
-    console.log(data);
     setMessages(data);
   };
 
@@ -32,8 +31,10 @@ const SubConta = ({ name, id, setMessages }) => {
         <Typography
           variant="body2"
           sx={{
-            color: "gray",
+            color: "text.secondary",
             fontSize: "1rem",
+            cursor: "pointer",
+            fontFamily: "Cabin",
           }}
         >
           {name}
